@@ -24,14 +24,14 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
         
         let showAdButton = UIButton()
         showAdButton.frame = CGRect(x: 55, y: 55, width: 100, height: 100)
-        showAdButton.setTitle("Show Ad", for: .normal)
+        showAdButton.setTitle("Show AdMob Ad", for: .normal)
         showAdButton.setTitleColor(UIColor.blue, for: .normal)
         showAdButton.addTarget(self, action: #selector(showAd), for: .touchUpInside)
         self.view.addSubview(showAdButton)
         
         let showMopubAdButton = UIButton()
         showMopubAdButton.frame = CGRect(x: 55, y: 305, width: 100, height: 100)
-        showMopubAdButton.setTitle("Show Ad", for: .normal)
+        showMopubAdButton.setTitle("Show Mopub Ad", for: .normal)
         showMopubAdButton.setTitleColor(UIColor.blue, for: .normal)
         showMopubAdButton.addTarget(self, action: #selector(showMopubAd), for: .touchUpInside)
         self.view.addSubview(showMopubAdButton)
