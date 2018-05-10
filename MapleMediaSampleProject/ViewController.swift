@@ -13,28 +13,38 @@ import GoogleMobileAds
 import MoPub
 
 
+
 class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
     
     var interstitialAd: GADInterstitial!
     
     var mopubAdController: MPInterstitialAdController!
+    
+    var customEvent: MPGoogleAdMobInterstitialCustomEvent!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let showAdButton = UIButton()
-        showAdButton.frame = CGRect(x: 55, y: 55, width: 100, height: 100)
+        showAdButton.frame = CGRect(x: 55, y: 55, width: 150, height: 100)
         showAdButton.setTitle("Show AdMob Ad", for: .normal)
         showAdButton.setTitleColor(UIColor.blue, for: .normal)
         showAdButton.addTarget(self, action: #selector(showAd), for: .touchUpInside)
         self.view.addSubview(showAdButton)
         
         let showMopubAdButton = UIButton()
-        showMopubAdButton.frame = CGRect(x: 55, y: 305, width: 100, height: 100)
+        showMopubAdButton.frame = CGRect(x: 55, y: 305, width: 150, height: 100)
         showMopubAdButton.setTitle("Show Mopub Ad", for: .normal)
         showMopubAdButton.setTitleColor(UIColor.blue, for: .normal)
         showMopubAdButton.addTarget(self, action: #selector(showMopubAd), for: .touchUpInside)
         self.view.addSubview(showMopubAdButton)
+        
+        let showMediatedAdButton = UIButton()
+        showMediatedAdButton.frame = CGRect(x: 55, y: 505, width: 200, height: 100)
+        showMediatedAdButton.setTitle("Show Mediated Ad", for: .normal)
+        showMediatedAdButton.setTitleColor(UIColor.blue, for: .normal)
+        showMediatedAdButton.addTarget(self, action: #selector(showMediatedAdMob), for: .touchUpInside)
+        self.view.addSubview(showMediatedAdButton)
         
         interstitialAd = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         let request = GADRequest()
@@ -44,6 +54,8 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
         mopubAdController?.delegate = self
         mopubAdController.loadAd()
         
+        customEvent = MPGoogleAdMobInterstitialCustomEvent.init()
+        customEvent.requestInterstitial(withCustomEventInfo: ["adUnitID": "ca-app-pub-3940256099942544/4411468910" ])
         
     }
 
@@ -66,6 +78,11 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
         } else {
             print("MopubAd wasn't ready")
         }
+    }
+    
+    @objc func showMediatedAdMob(){
+        print("This is mediated ad.")
+        customEvent.showInterstitial(fromRootViewController: self)
     }
 
 
