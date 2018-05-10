@@ -8,6 +8,8 @@ target 'MapleMediaSampleProject' do
   # Pods for MapleMediaSampleProject
   pod 'mopub-ios-sdk'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'MoPub-AdMob-Adapters'
+
 
   target 'MapleMediaSampleProjectTests' do
     inherit! :search_paths

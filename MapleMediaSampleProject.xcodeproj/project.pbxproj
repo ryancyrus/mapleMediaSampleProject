@@ -58,6 +58,7 @@
 		94B83FC320A3ECCF001FFCA3 /* MapleMediaSampleProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapleMediaSampleProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B83FC720A3ECCF001FFCA3 /* MapleMediaSampleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapleMediaSampleProjectUITests.swift; sourceTree = "<group>"; };
 		94B83FC920A3ECCF001FFCA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94B83FDA20A432EA001FFCA3 /* MapleMediaSampleProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapleMediaSampleProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9310C9BFC01AAD74E1F2EC5 /* Pods-MapleMediaSampleProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleMediaSampleProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapleMediaSampleProjectUITests/Pods-MapleMediaSampleProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +93,7 @@
 		94B83F9B20A3ECCF001FFCA3 = {
 			isa = PBXGroup;
 			children = (
+				94B83FDA20A432EA001FFCA3 /* MapleMediaSampleProject-Bridging-Header.h */,
 				94B83FA620A3ECCF001FFCA3 /* MapleMediaSampleProject */,
 				94B83FBB20A3ECCF001FFCA3 /* MapleMediaSampleProjectTests */,
 				94B83FC620A3ECCF001FFCA3 /* MapleMediaSampleProjectUITests */,
@@ -559,8 +561,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.influxys.MapleMediaSampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MapleMediaSampleProject-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
 			};
 			name = Debug;
 		};
@@ -578,8 +583,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.influxys.MapleMediaSampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MapleMediaSampleProject-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
 			};
 			name = Release;
 		};
